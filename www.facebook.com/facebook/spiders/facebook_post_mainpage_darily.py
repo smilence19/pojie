@@ -241,7 +241,7 @@ class FacebookxlsSpider(InitSpider):
             comments_id = i[0]
             yield scrapy.Request(
                 url='https://graph.facebook.com/v2.11/' + comments_id + '?fields=admin_creator&access_token=' + self.access_token,
-                callback=self.comments_parse, method='GET', cookies=self.cookie)
+                callback=self.author_parse, method='GET', cookies=self.cookie)
             yield scrapy.Request(
                 url='https://graph.facebook.com/v2.11/' + comments_id + '?fields=comments.limit(100)%7Bid%2Cmessage%2Clike_count%2Ccreated_time%2Cpermalink_url%2Ccomment_count%2Cfrom%7D%2Cid&access_token=' + self.access_token,
                 callback=self.comments_parse, method='GET', cookies=self.cookie)
