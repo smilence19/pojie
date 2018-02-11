@@ -1,25 +1,9 @@
-#!/bin/bash
-#########################
-. ~/.bashrc 
-. ~/.profile
-#########################
-basePath="/spider/spiderManager"
-dataPath=${basePath}/data
-tmpPath=${basePath}/tmp
-if [ ! -d $basePath ];then
-	echo "basePath error!"
-	exit 1
-fi
-if [ ! -d $dataPath ];then
-	mkdir $dataPath
-fi
-cd $basePath
-python cron.py `date +%H`
-data=`ls ${dataPath}/cron_manager_spider_*`
-for item in $data
-do
-    if [  -f ${item} ];then
-        scp ${item}  tvfan@103.244.165.195:/opt/crawler_data/import/
-        rm ${item}
-    fi
-done
+#! /bin/sh
+export PATH=$PATH:/usr/local/bin
+
+#进入.py脚本所在目录
+cd /www.facebook.com
+
+#执行.py中定义的项目example，并指定日志文件，其中nohup....&表示可以在后台执行，不会因为关闭终端而导致程序执行中断。
+nohup sudo scrapy crawl facebook_post_mainpage_dairly >> facebook_post_mainpage_dairly.log 2>&1 &
+
