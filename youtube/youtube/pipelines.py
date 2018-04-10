@@ -18,10 +18,10 @@ class YoutubePipeline(object):
     # 创建初始化函数，当通过此类创建对象时首先被调用的方法
     def __init__(self):
         config = {
-            'host': '127.0.0.1',
+            'host': '10.131.54.68',
             'port': 3306,
             'user': 'root',
-            'password': '%jGvlz-0<aaTA',
+            'password': 'Ftrwe76!d&*sdjk',
             'db': 'facebook',
             'charset': 'utf8mb4',
             'cursorclass': pymysql.cursors.DictCursor,
