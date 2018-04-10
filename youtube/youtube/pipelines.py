@@ -22,7 +22,7 @@ class YoutubePipeline(object):
             'port': 3306,
             'user': 'root',
             'password': 'Ftrwe76!d&*sdjk',
-            'db': 'facebook',
+            'db': 'post_db',
             'charset': 'utf8mb4',
             'cursorclass': pymysql.cursors.DictCursor,
         }
